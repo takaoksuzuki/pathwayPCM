@@ -22,7 +22,7 @@ Output:
 
 Select top-20 important input features based on ANOVA F-value to predict gene gain of an OG ([K00005](https://www.genome.jp/dbget-bin/www_bget?ko:K00005)).
 
-```shell
+```R
 evodictor select -i branch_X_y.txt --skip_header --o1 feature_importance.txt --o2 selection_result.txt --o3 branch_X_y.selected.txt -k 20
 ```
 
