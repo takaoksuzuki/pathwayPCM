@@ -34,4 +34,12 @@ Preparing shell files.
 evodictor select -i branch_X_y.txt --skip_header --o1 feature_importance.txt --o2 selection_result.txt --o3 branch_X_y.selected.txt -k 20
 ```
 
+**Step 4: Parse the results of BayesTraits**
+
+Parsing the result files and extract qrates and z-score.
+
+```R
+evodictor select -i branch_X_y.txt --skip_header --o1 feature_importance.txt --o2 selection_result.txt --o3 branch_X_y.selected.txt -k 20
+```
+
 
