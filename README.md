@@ -42,4 +42,12 @@ Parsing the result files and extract qrates and z-score.
 evodictor select -i branch_X_y.txt --skip_header --o1 feature_importance.txt --o2 selection_result.txt --o3 branch_X_y.selected.txt -k 20
 ```
 
+**Step 5: Drow the macro-evolutionary pathway**
+
+Make edge list of macro-evolutioary pathway and draw it.
+
+```R
+evodictor select -i branch_X_y.txt --skip_header --o1 feature_importance.txt --o2 selection_result.txt --o3 branch_X_y.selected.txt -k 20
+```
+
 
