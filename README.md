@@ -8,7 +8,7 @@ This repository contains an example input file in the `Example` directory so use
 
 Input:
 
-[`Proteobacteria_cellshape_motility_sporulation_bac120_r207.tree`](https://github.com/takaoksuzuki/pathwayPCM/blob/main/Example/Proteobacteria_cellshape_motility_sporulation_bac120_r207.tree): A phylogenetic tree in a Newick format.
+[`Proteobacteria_cellshape_motility_sporulation_bac120_r207.tree`](https://github.com/takaoksuzuki/pathwayPCM/blob/main/Example/Proteobacteria_cellshape_motility_sporulation_bac120_r207.tree): A phylogenetic tree in a Nexus format.
 
 [`OG_node_state.txt`](https://github.com/IwasakiLab/Evodictor/tree/main/example/OG_node_state.txt): The presence/absence profile of every ortholog group (OG) for every tip node (extant species) and every internal node (ancestors) of [`example.tree`](https://github.com/IwasakiLab/Evodictor/tree/main/example/example.tree). There is one row for every internal/tip node in this file. The first, second, and third columns of every row indicate the OG name, node name, and the presence/absence state, respectively. The presence/absence state is represented as `0` (absent), `1` (present), or `0.5` (uncertain; for ancestors). Rows for which states are `0` can be omitted in this file (in other words, states of nodes not defined in this file are treated as `0`).
 
