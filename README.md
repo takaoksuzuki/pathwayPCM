@@ -4,7 +4,7 @@
 
 This method models trait evolution as a continuous-time Markov process over a state space of trait combinations, where nodes correspond to trait combination codes and directed edges denote evolutionarily permissible transitions between them.
 
-<img src=image/Fig1.png >
+<img src=image/fig1.jpg >
 
 ### Sample Codes
 
