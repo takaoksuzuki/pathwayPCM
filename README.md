@@ -36,7 +36,7 @@ bac_16.sh
 
 **Step 4: Parse the results of BayesTraits**
 
-Parsing the result files to extract data rows.
+Parsing the result files to extract data rows. Because of batch processing, users do not need to specify input files.
 
 ```R
 extractdata.R
