@@ -36,10 +36,20 @@ bac_16.sh
 
 **Step 4: Parse the results of BayesTraits**
 
-Parsing the result files and extract qrates and z-score.
+Parsing the result files to extract data rows.
 
 ```R
-evodictor select -i branch_X_y.txt --skip_header --o1 feature_importance.txt --o2 selection_result.txt --o3 branch_X_y.selected.txt -k 20
+extractdata.R
+```
+Calcurate qrates from the extracted data.
+
+```R
+makeqrate.R
+```
+Calcurate z-scores from the extracted data.
+
+```R
+makezscore.R
 ```
 
 **Step 5: Draw the macro-evolutionary pathway**
