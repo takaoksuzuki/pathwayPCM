@@ -16,7 +16,7 @@ Input:
 
 [`Proteobacteria_cellshape_motility_sporulation_bac120_r207.tree`](https://github.com/takaoksuzuki/pathwayPCM/blob/main/Example/Proteobacteria_cellshape_motility_sporulation_bac120_r207.tree): A phylogenetic tree in a Nexus format.
 
-[`example.tree`](https://github.com/IwasakiLab/Evodictor/tree/main/example/example.tree): Character coding table
+[`ch_GTDB207_cellshape_motility_sporulation_Proteobacteria.tsv`](https://github.com/IwasakiLab/Evodictor/tree/main/example/example.tree): Character coding table
 
 Output:
 
