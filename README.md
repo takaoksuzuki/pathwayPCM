@@ -10,17 +10,13 @@ This method models trait evolution as a continuous-time Markov process over a st
 
 This repository contains an example input file in the `Example` directory so users can quickly try reconstructing macro-evolutionary pathway of multiple traits using pathwayPCM step-by-step:
 
-**Step 1: Dataset Generation**
+**Step 1: Dataset Preparation**
 
 Input:
 
 [`Proteobacteria_cellshape_motility_sporulation_bac120_r207.tree`](https://github.com/takaoksuzuki/pathwayPCM/blob/main/Example/Proteobacteria_cellshape_motility_sporulation_bac120_r207.tree): A phylogenetic tree in a Nexus format.
 
 [`ch_GTDB207_cellshape_motility_sporulation_Proteobacteria.tsv`](https://github.com/takaoksuzuki/pathwayPCM/blob/main/Example/ch_GTDB207_cellshape_motility_sporulation_Proteobacteria.tsv): Character coding table
-
-Output:
-
-[`branch_X_y.txt`](https://github.com/IwasakiLab/Evodictor/tree/main/example/output/branch_X_y.txt): The dataset for machine learning which can be an input file of `evodictor predict`. The first row is the header, and each of the following rows correspond to a branch in the [`example.tree`](https://github.com/IwasakiLab/Evodictor/tree/main/example/example.tree). The first, second, and third column of every row indicate the node name of a parental species of a branch in [`example.tree`](https://github.com/IwasakiLab/Evodictor/tree/main/example/example.tree), the number of present traits of every feature in the parental species (separated by `;`), and the occurrence of gene gain of predicted OG ([K00005](https://www.genome.jp/dbget-bin/www_bget?ko:K00005)) at the branch (`1`: the gene was gained at the branch;  `0`: the gene was not gained at the branch). 
 
 **Step 2: Preparation of a command file for BayesTraits analysis**
 
