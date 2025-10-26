@@ -8,17 +8,17 @@ fin <- list.files(getwd(), pattern = "\\.Log\\.txt$", full.names = FALSE)
 for (cfin in fin) {
   message("Processing: ", cfin)
   
-  # === ���O�t�@�C���ǂݍ��� ===
+  # === ログファイル読み込み ===
   all_lines <- readLines(cfin)
   
-  # Iteration �s��T��
+  # Iteration 行を探す
   start_line <- which(grepl("^Iteration\t", all_lines))[1]
   data_lines <- all_lines[start_line:length(all_lines)]
   
-  # �񖼂𒊏o
+  # 列名を抽出
   col_names <- strsplit(data_lines[1], "\t")[[1]]
   
-  # Fossil �̏ꍇ Root ��2��o��̂Œ���
+  # Fossil の場合 Root 列が2回出るので調整
   root_names <- grep("^Root", col_names, value = TRUE)
   n <- length(root_names) / 2
   if (n == floor(n) && identical(root_names[1:n], root_names[(n+1):(2*n)])) {
@@ -26,15 +26,15 @@ for (cfin in fin) {
     col_names[second_set] <- paste0(col_names[second_set], "_F")
   }
   
-  # �f�[�^�{�̂� tibble ��
+  # データ本体を tibble 化
   df <- tibble(datacol = data_lines) %>%
     separate(datacol, into = col_names, sep = "\t", extra = "drop") %>%
-    slice(-1)   # �w�b�_�[�������
+    slice(-1)   # ヘッダー列を除去
   
-  # �o�̓t�@�C����
+  # 出力ファイル名
   base_name <- str_remove(cfin, "\\.Log.*$")
   fout <- paste0("eData_", base_name, ".tsv")
   
-  # �����o��
+  # 書き出し
   write_tsv(df, fout)
 }
