@@ -31,7 +31,7 @@ makerestriction.R
 Preparing shell files.
 
 ```SHELL
-bac_16.sh
+run_bayestraits.sh
 ```
 
 **Step 4: Parse the results of BayesTraits**
