@@ -23,7 +23,7 @@ Input:
 Make command lines for constraining transition rates.
 
 ```R
-makerestriction.R
+/src/R/makerestriction.R
 ```
 
 **Step 3: Run BayesTraits**
@@ -31,7 +31,7 @@ makerestriction.R
 Preparing shell files.
 
 ```SHELL
-run_bayestraits.sh
+/src/SHELL/run_bayestraits.sh
 ```
 
 **Step 4: Parse the results of BayesTraits**
@@ -39,17 +39,17 @@ run_bayestraits.sh
 Parsing the result files to extract data rows. Because of batch processing, users do not need to specify input files.
 
 ```R
-extractdata.R
+/src/R/extractdata.R
 ```
 Calcurate qrates from the extracted data.
 
 ```R
-makeqrate.R
+/src/R/makeqrate.R
 ```
 Calcurate z-scores from the extracted data.
 
 ```R
-makezscore.R
+/src/R/makezscore.R
 ```
 
 **Step 5: Draw the macro-evolutionary pathway**
@@ -57,7 +57,7 @@ makezscore.R
 Make edge list of macro-evolutioary pathway and draw it.
 
 ```R
-plot_zscore+qrates_github.R
+/src/R/plot_zscore+qrates.R
 ```
 
 
