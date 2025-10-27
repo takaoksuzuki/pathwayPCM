@@ -43,7 +43,7 @@ Preparing shell files.
 
 **Step 4: Parse the results of BayesTraits**
 
-Parsing the result files to extract data rows. Because of batch processing, users do not need to specify input files.
+Parsing the result files to extract data rows. In batch processing mode, users do not need to specify input files explicitly. The script automatically detects and loads input files located in the same directory as extractdata.R.
 
 ```R
 /src/R/extractdata.R
