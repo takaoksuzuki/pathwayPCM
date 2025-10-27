@@ -1,4 +1,4 @@
-<h2>pathwayPCM</h2>
+<h1>pathwayPCM</h1>
 
 ### Overview of pathwayPCM
 
