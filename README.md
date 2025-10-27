@@ -1,16 +1,16 @@
 <h1>pathwayPCM</h1>
 
-#### Overview of pathwayPCM
+## Overview of pathwayPCM
 
 This method models trait evolution as a continuous-time Markov process over a state space of trait combinations, where nodes correspond to trait combination codes and directed edges denote evolutionarily permissible transitions between them.
 
 <img src=image/fig1.jpg >
 
-### System requirements
+## System requirements
 
 This method models trait evolution as a continuous-time Markov process over a state space of trait combinations, where nodes correspond to trait combination codes and directed edges denote evolutionarily permissible transitions between them.
 
-### Sample Codes
+## Sample Codes
 
 This repository contains an example input file in the `Example` directory so users can quickly try reconstructing macro-evolutionary pathway of multiple traits using pathwayPCM step-by-step:
 
