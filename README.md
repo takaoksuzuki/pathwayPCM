@@ -11,7 +11,7 @@ This method models trait evolution as a continuous-time Markov process over a st
 - pathwayPCM has been tested on R versions ≥ 4.4.
 - Please consult the DESCRIPTION file for details on required R packages.
 - pathwayPCM has been tested on Linux and Windows platforms.
-- For Bayesian inference, the package requires a working installation of rstan (≥ 2.21) and a C++ toolchain compatible with Stan.
+- For phylogenetic comparative analyses, the package requires a working installation of BayesTraits (version 4.0 or later), which must be accessible from the system command line (BayesTraitsV4 executable in $PATH).
 
 ## Sample Codes
 
