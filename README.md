@@ -44,6 +44,7 @@ Preparing shell files.
 **Step 4: Parse the results of BayesTraits**
 
 In batch processing mode, users do not need to specify input files explicitly. Each script (`extractdata.R`, `makeqrate.R`, and `makezscore.R`) automatically detects and loads input files located in the same directory as the script (`/src/R/`). <BR>
+<BR>
 Parse the BayesTraits output files to extract data rows.
 ```R
 /src/R/extractdata.R
