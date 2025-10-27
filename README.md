@@ -8,7 +8,10 @@ This method models trait evolution as a continuous-time Markov process over a st
 
 ## System requirements
 
-This method models trait evolution as a continuous-time Markov process over a state space of trait combinations, where nodes correspond to trait combination codes and directed edges denote evolutionarily permissible transitions between them.
+pathwayPCM has been tested on R versions ≥ 4.4.
+Please consult the DESCRIPTION file for details on required R packages.
+pathwayPCM has been tested on Linux and Windows platforms.
+For Bayesian inference, the package requires a working installation of rstan (≥ 2.21) and a C++ toolchain compatible with Stan.
 
 ## Sample Codes
 
