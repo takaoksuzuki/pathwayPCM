@@ -6,6 +6,12 @@ This method models trait evolution as a continuous-time Markov process over a st
 
 <img src=image/fig1.jpg >
 
+(A) Model constraints. Nodes represent all possible combinations of three traits, corresponding to trait combination codes (here illustrated with binary traits), and edges represent evolutionarily possible transitions between them. The initial model assumes a fully connected topology with constrained rate parameters—six transition rates (three forward, three backward) indicated by distinct colors. Although illustrated here for three binary traits, the pathwayPCM framework can also handle multistate (non-binary) traits. 
+(B) Bayesian sampling by reversible-jump MCMC (rjMCMC). The rjMCMC algorithm simultaneously updates transition rates (edge thickness) and network topology (edge addition/deletion). After convergence, rate parameters are averaged, and the topology is determined based on z-scores of edge inclusion frequencies, yielding an optimized macroevolutionary transition network (the macroevolutionary pathway). 
+(C) Downstream analysis. Because the inferred macroevolutionary pathway has a network structure, standard network analyses can be applied, such as module structure detection, to identify groups of traits that tend to evolve together. Example modules are shown in pink and yellow.
+
+<img width="13361" height="53" alt="image" src="https://github.com/user-attachments/assets/0699977f-ff7f-48cb-b99c-28e0e2dfd5c4" />
+
 ## System requirements
 
 - pathwayPCM has been tested on R versions ≥ 4.4.
