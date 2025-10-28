@@ -25,7 +25,7 @@ Input:
 A phylogenetic tree in a Nexus format.
 
 [`ch_GTDB207_cellshape_motility_sporulation_Proteobacteria.tsv`](https://github.com/takaoksuzuki/pathwayPCM/blob/main/data/ch_GTDB207_cellshape_motility_sporulation_Proteobacteria.tsv):<BR>
-Input table of accession–trait combinations. The first column lists tip labels, and the second column specifies the multi-trait state (e.g., cell shape, motility, sporulation).
+Input table of accession–trait combinations. The first column lists tip labels, and the second column contains alphanumeric character codes (e.g., A, B, C, 1, 2, …) that uniquely identify combinations of traits (cell shape, motility, and sporulation).
 
 [`ch_coding_GTDB207_cellshape_motility_sporulation_ALLphylum.tsv`](https://github.com/takaoksuzuki/pathwayPCM/blob/main/data/ch_coding_GTDB207_cellshape_motility_sporulation_ALLphylum.tsv):<BR>
 Character coding table
