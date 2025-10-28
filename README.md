@@ -25,7 +25,7 @@ Input:
 
 [`ch_GTDB207_cellshape_motility_sporulation_Proteobacteria.tsv`](https://github.com/takaoksuzuki/pathwayPCM/blob/main/data/ch_GTDB207_cellshape_motility_sporulation_Proteobacteria.tsv): Character coding table
 
-[`ch_GTDB207_cellshape_motility_sporulation_Proteobacteria.tsv`](https://github.com/takaoksuzuki/pathwayPCM/blob/main/data/ch_GTDB207_cellshape_motility_sporulation_Proteobacteria.tsv): Character coding table
+[`ch_coding_GTDB207_cellshape_motility_sporulation_ALLphylum.tsv`](https://github.com/takaoksuzuki/pathwayPCM/blob/main/data/ch_coding_GTDB207_cellshape_motility_sporulation_ALLphylum.tsv): Character coding table
 
 **Step 2: Preparation of a command file for BayesTraits analysis**
 
