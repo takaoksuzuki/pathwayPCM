@@ -28,7 +28,8 @@ A phylogenetic tree in a Nexus format.
 Input table of accession–trait combinations. The first column lists tip labels, and the second column contains alphanumeric character codes (e.g., A, B, C, 1, 2, …) that uniquely identify combinations of traits (cell shape, motility, and sporulation).
 
 [`ch_coding_GTDB207_cellshape_motility_sporulation_ALLphylum.tsv`](https://github.com/takaoksuzuki/pathwayPCM/blob/main/data/ch_coding_GTDB207_cellshape_motility_sporulation_ALLphylum.tsv):<BR>
-Character coding table
+Character coding table. This file defines the correspondence between each alphanumeric code and the actual combination of trait states (e.g., A = rod–motile–sporulating).
+Used as a unified reference across phyla.
 
 **Step 2: Preparation of a command file for BayesTraits analysis**
 
