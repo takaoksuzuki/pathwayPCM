@@ -96,7 +96,7 @@ Output:
 
 **Step 6: Detecte the flow modules by Infomap methods**
 
-Make edge list of macro-evolutioary pathway and draw it.
+Identify flow modules (clusters of trait transitions) within the macro-evolutionary pathway network using the Infomap algorithm.
 
 ```R
 /src/R/plot_zscore+qrates.R
