@@ -90,6 +90,10 @@ Make edge list of macro-evolutioary pathway and draw it.
 /src/R/plot_zscore+qrates.R
 ```
 
+Output:
+
+<img src=image/fig2.jpg >
+
 **Step 6: Detecte the flow modules by Infomap methods**
 
 Make edge list of macro-evolutioary pathway and draw it.
