@@ -14,15 +14,14 @@ This method models trait evolution as a continuous-time Markov process over a st
 
 ## System requirements
 
-- pathwayPCM version 0.1.0 has been tested on R versions ≥ 4.4.
+- R versions ≥ 4.4.
 - Required R packages:
   - readr (≥ 2.1.5)
   - dplyr (≥ 1.1.4)
   - tidyr (≥ 1.3.1)
   - stringr (≥ 1.5.1)
   - igraph (ver. 2.0.3)
-- Please consult the [`DESCRIPTION`](https://github.com/takaoksuzuki/pathwayPCM/blob/main/doc/DESCRIPTION) file for details on required R packages.
-- pathwayPCM has been tested on Linux and Windows platforms.
+- Tested on Linux (Ubuntu 22.04) and Windows 11
 - BayesTraits version 4.0 or later (command-line executable accessible in $PATH)
 
 ## pathwayPCM Workflow
