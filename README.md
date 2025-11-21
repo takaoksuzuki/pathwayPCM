@@ -103,10 +103,7 @@ Test the installation:
 ```SHELL
 BayesTraitsV4
 ```
-BayesTraits is used in Step 2 (RJMCMC) of the pipeline.
-
-#### 3. Downstream analysis
-(corresponds to Sample Codes Steps 5–6 using R, including igraph’s Infomap implementation)
+BayesTraits is used in Step 3 (Run BayesTraits) of the pipeline.
 
 ## Sample Codes
 
