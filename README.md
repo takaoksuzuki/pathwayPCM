@@ -23,7 +23,7 @@ This method models trait evolution as a continuous-time Markov process over a st
 
 3 steps
 #### 1. Data preprocessing
-#### 2. BayesTraits RJMCMC analysis
+#### 2. Phylogenetic comparative analysis using reversible-jump MCMC
 #### 3. Downstream analysis
 
 
