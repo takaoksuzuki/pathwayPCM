@@ -22,9 +22,9 @@ This method models trait evolution as a continuous-time Markov process over a st
 ## pathwayPCM Workflow
 
 3 steps
-# 1 Data preprocessing
-# 2 BayesTraits RJMCMC analysis
-# 3 Downstream analysis
+### 1 Data preprocessing
+### 2 BayesTraits RJMCMC analysis
+### 3 Downstream analysis
 
 
 ## Installation Guide
