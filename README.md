@@ -44,7 +44,7 @@ pathwayPCM consists of three computational steps:
 
 ## Installation Guide
 
-#### Prerequisites
+#### 1. Prerequisites
 pathwayPCM is currently implemented as a modular pipeline, not a single integrated R package.
 To execute the workflow, users must install:
 - R (≥ 4.4)
