@@ -93,13 +93,16 @@ BayesTraits v4 must be downloaded separately because it is not an R package.
 Download (free academic license):
 https://www.evolution.reading.ac.uk/BayesTraits.html
 
-Unzip and place the executable in your PATH:
+Unzip the downloaded archive and place the BayesTraitsV4 executable in:
 ```SHELL
-# example
-mv ./BayesTraitsV4 /usr/local/bin/
-chmod +x /usr/local/bin/BayesTraitsV4
+mv /path/to/downloaded/BayesTraitsV4 ./BayesTraits/
+chmod +x ./BayesTraits/BayesTraitsV4
 ```
-BayesTraits is used in Step 3 (Run BayesTraits) of the pipeline.
+Test the installation:
+```SHELL
+./BayesTraits/BayesTraitsV4
+```
+BayesTraits is used in Step 2 (Run BayesTraits) of the pipeline.
 
 ## Sample Codes
 
