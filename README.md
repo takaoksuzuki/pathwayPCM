@@ -99,10 +99,6 @@ Unzip and place the executable in your PATH:
 mv ./BayesTraitsV4 /usr/local/bin/
 chmod +x /usr/local/bin/BayesTraitsV4
 ```
-Test the installation:
-```SHELL
-BayesTraitsV4
-```
 BayesTraits is used in Step 3 (Run BayesTraits) of the pipeline.
 
 ## Sample Codes
