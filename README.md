@@ -77,7 +77,7 @@ install.packages(c(
 ```
 These packages are used in Step 1 (preprocessing) and Step 3 (downstream analysis).
 
-##### Step 3 — Verify shell environment (bash)
+##### Step 3 — Prepare shell environment (bash)
 BayesTraits v4 must be downloaded separately because it is not an R package.
 
 Download (free academic license):
