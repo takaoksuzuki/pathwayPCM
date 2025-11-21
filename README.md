@@ -29,7 +29,7 @@ This method models trait evolution as a continuous-time Markov process over a st
 pathwayPCM consists of three computational steps:
 
 > [!NOTE]
-> athwayPCM is currently implemented as a modular pipeline, rather than a single integrated function.
+> pathwayPCM is currently implemented as a modular pipeline, rather than a single integrated platform.
 > This is because the method relies on BayesTraits v4, which must be executed as an external command outside R.
 > Each step is therefore run separately (R scripts + shell scripts). A unified interface is planned for future releases.
 
