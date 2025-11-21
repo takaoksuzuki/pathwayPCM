@@ -46,6 +46,7 @@ pathwayPCM consists of three computational steps:
 
 #### 1. Prerequisites
 pathwayPCM is currently implemented as a modular pipeline, not a single integrated R package.
+
 To execute the workflow, users must install:
 - R (≥ 4.4)
 - Required R packages
@@ -78,6 +79,7 @@ These packages are used in Step 1 (preprocessing) and Step 3 (downstream analysi
 
 ##### Step 3 — Prepare shell environment (bash)
 Some steps in the pathwayPCM workflow (especially running BayesTraits) require a working bash environment.
+
 To check that bash is available:
 ```SHELL
 # example
