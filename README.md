@@ -44,7 +44,20 @@ pathwayPCM consists of three computational steps:
 
 ## Installation Guide
 
-This repository contains 
+#### 1. Overview
+pathwayPCM is currently implemented as a modular pipeline, not a single integrated R package.
+To execute the workflow, users must install:
+- R (≥ 4.4)
+- Required R packages
+- BayesTraits v4 (external executable)
+- (Optional) Shell environment (bash)
+Once installed, users can run the three computational steps (data preprocessing → PCMs → downstream analysis).
+
+#### 2. Installation instructions
+(corresponds to Sample Codes Steps 3–4 using BayesTraits and shell scripts)
+
+#### 3. Downstream analysis
+(corresponds to Sample Codes Steps 5–6 using R, including igraph’s Infomap implementation)
 
 ## Sample Codes
 
