@@ -26,7 +26,7 @@ This method models trait evolution as a continuous-time Markov process over a st
 
 ## pathwayPCM Workflow
 
-pathwayPCM consists of three computational steps:
+pathwayPCM consists of three computational stages:
 
 > [!NOTE]
 > pathwayPCM is currently implemented as a modular pipeline, rather than a single integrated platform.
