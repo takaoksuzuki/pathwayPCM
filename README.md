@@ -21,7 +21,8 @@ This method models trait evolution as a continuous-time Markov process over a st
 
 ## pathwayPCM Workflow
 
-3 steps
+pathwayPCM consists of three computational steps:
+
 #### 1. Data preprocessing
 #### 2. Phylogenetic comparative analysis using reversible-jump MCMC
 #### 3. Downstream analysis
