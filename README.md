@@ -31,7 +31,7 @@ pathwayPCM consists of three computational steps:
 > [!NOTE]
 > pathwayPCM is currently implemented as a modular pipeline, rather than a single integrated platform.
 > This is because the method relies on BayesTraits v4, which must be executed as an external command outside R.
-> Each step is therefore run separately (R scripts + shell scripts). A unified interface is planned for future releases.
+> Each step is therefore executed separately (via R scripts and shell scripts). A unified interface is planned for future releases.
 
 #### 1. Data preprocessing
 #### 2. Phylogenetic comparative analysis using reversible-jump MCMC
