@@ -34,9 +34,13 @@ pathwayPCM consists of three computational steps:
 > Each step is therefore executed separately (via R scripts and shell scripts). A unified interface is planned for future releases.
 
 #### 1. Data preprocessing
-#### 2. Phylogenetic comparative analysis using reversible-jump MCMC
-#### 3. Downstream analysis
+(corresponds to Sample Codes Steps 1–2 using R and shell scripts)
 
+#### 2. Phylogenetic comparative analysis using reversible-jump MCMC
+(corresponds to Sample Codes Steps 3–4 using BayesTraits and shell scripts)
+
+#### 3. Downstream analysis
+(corresponds to Sample Codes Steps 5–6 using R and igraph/Infomap)
 
 ## Installation Guide
 
