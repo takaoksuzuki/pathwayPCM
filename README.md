@@ -40,7 +40,7 @@ pathwayPCM consists of three computational steps:
 (corresponds to Sample Codes Steps 3–4 using BayesTraits and shell scripts)
 
 #### 3. Downstream analysis
-(corresponds to Sample Codes Steps 5–6 using R and igraph/Infomap)
+(corresponds to Sample Codes Steps 5–6 using R, including igraph’s Infomap implementation)
 
 ## Installation Guide
 
