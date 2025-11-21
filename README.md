@@ -83,7 +83,8 @@ Some steps in the pathwayPCM workflow (especially running BayesTraits) require a
 To check that bash is available:
 ```SHELL
 # example
-bash --version```
+bash --version
+```
 If you are using Windows, we recommend running the workflow in WSL2, MSYS2, or Git Bash, which provide a compatible bash environment.
 
 ##### Step 4 — Install BayesTraits v4
