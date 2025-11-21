@@ -85,7 +85,7 @@ To check that bash is available:
 # example
 bash --version
 ```
-If you are using Windows, we recommend running the workflow in WSL2, MSYS2, or Git Bash, which provide a compatible bash environment.
+Linux and macOS provide a bash shell by default. Windows users should run the pipeline through WSL2 for full compatibility.
 
 ##### Step 4 — Install BayesTraits v4
 BayesTraits v4 must be downloaded separately because it is not an R package.
