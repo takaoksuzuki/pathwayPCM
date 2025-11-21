@@ -77,7 +77,20 @@ install.packages(c(
 ```
 These packages are used in Step 1 (preprocessing) and Step 3 (downstream analysis).
 
-##### Step 3 — Install BayesTraits v4
+##### Step 3 — Verify shell environment (bash)
+BayesTraits v4 must be downloaded separately because it is not an R package.
+
+Download (free academic license):
+https://www.evolution.reading.ac.uk/BayesTraits.html
+
+Unzip and place the executable in your PATH:
+```SHELL
+# example
+mv ./BayesTraitsV4 /usr/local/bin/
+chmod +x /usr/local/bin/BayesTraitsV4
+```
+Test the installation:
+##### Step 4 — Install BayesTraits v4
 BayesTraits v4 must be downloaded separately because it is not an R package.
 
 Download (free academic license):
