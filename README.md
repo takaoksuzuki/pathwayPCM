@@ -19,6 +19,10 @@ This method models trait evolution as a continuous-time Markov process over a st
 - pathwayPCM has been tested on Linux and Windows platforms.
 - For phylogenetic comparative analyses, the package requires a working installation of BayesTraits (version 4.0 or later), which must be accessible from the system command line (BayesTraitsV4 executable in $PATH).
 
+## Installation Guide
+
+This repository contains 
+
 ## Sample Codes
 
 This repository contains an example input file in the `data` directory so users can quickly try reconstructing macro-evolutionary pathway of multiple traits using pathwayPCM step-by-step:
