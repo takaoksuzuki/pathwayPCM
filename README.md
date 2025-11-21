@@ -54,14 +54,14 @@ To execute the workflow, users must install:
 Once installed, users can run the three computational steps (data preprocessing → PCMs → downstream analysis).
 
 #### 2. Installation instructions
-Step 1 — Clone the repository
+##### Step 1 — Clone the repository
 ```SHELL
 git clone https://github.com/takaokosk/pathwayPCM.git
 cd pathwayPCM
 ```
 This repository contains the R scripts, shell scripts, and example input files necessary to reproduce the workflow.
 
-Step 2 — Install R and required R packages
+##### Step 2 — Install R and required R packages
 Install R (≥ 4.4) from:
 https://cran.r-project.org/
 
