@@ -124,12 +124,12 @@ Used as a unified reference across phyla.
 
 **Step 2: Prepare BayesTraits command files (w/ rate restrictions)**
 
-Make command lines for constraining transition rates.
+Make command lines for constraining transition rates. The output file is This is a middle file to next step.
 
 ```R
 /src/R/makerestriction.R
 ```
-
+This command make inputcommand file for using BayesTraits (step 3) by integrating mycommand file.
 ```R
 /src/R/makeinputcommands.R
 ```
