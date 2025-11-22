@@ -12,7 +12,7 @@ mydata <- readr::read_tsv(fin_full)
 
 # === Get file names: trait coding tables by phylum ===
 mykey <- "^ch_GTDB207_cellshape_motility_sporulation_"
-fin <- list.files(getwd(), pattern=mykey, full.names=F)
+fin <- list.files(data_dir, pattern = mykey, full.names = TRUE)
 
 # === Define target traits ===
 mytraits <- c("cellshape", "motility", "sporulation")
@@ -164,5 +164,6 @@ for (cfin in fin){
     }
   }
 }
+
 
 
