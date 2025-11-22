@@ -186,10 +186,6 @@ the following files are available:
   Percentage of MCMC samples in which each transition rate was constrained to zero  
   (i.e., number of zero-constrained iterations / post-burn-in iterations × 100).
 
-　These files correspond to the results produced by `makeqrate.R` and `makezscore.R` when processing the BayesTraits output in the `results/` directory.
-
-  Table of estimated transition rates (q-values) between trait-state combinations
-
 **Step 5: Draw the macro-evolutionary pathway**
 
 Make edge list of macro-evolutioary pathway and draw it.
