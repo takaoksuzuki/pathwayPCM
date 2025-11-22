@@ -4,51 +4,55 @@ library(stringr)
 library(tidyr)
 library(igraph)
 
-# === Load file names for z-score results ===
-#-----------------------------------------------------------------------------------------
-fin_z <- list.files(getwd(), pattern ="^zscore_ch_GTDB207_cellshape_motility_sporulation_", full.names = F)
-#-----------------------------------------------------------------------------------------
+# === Set directories ===
+data_dir <- "data"
+results_dir <- "results"
 
+# === Load z-score result files from results/ ===
+fin_z <- list.files(results_dir, 
+                    pattern = "^zscore_ch_GTDB207_cellshape_motility_sporulation_", 
+                    full.names = TRUE)
+
+# === Loop over each z-score file ===
 for (cfin in fin_z) {
-  # === Read z-score data ===
-  # Note: do NOT use read_tsv() here, otherwise color codes will not be read correctly!
+
+  # --- Read z-score data ---
   mydata <- read.delim(cfin)
-  # Rename columns
   colnames(mydata) <- c("parameter","zscore")
-  
-  # === Create edge list ===
-  # Split transition states:
-  # qAB -> A, B
-  mybuf <- mydata %>% mutate(state_1=str_sub(parameter, 2, 2)) 
-  mydf <- mybuf %>% mutate(state_2=str_sub(parameter, 3, 3)) %>% select(state_1, state_2, zscore)
-  
-  # === Convert z-score to “non-z-score” ===
+
+  # --- Create edge list (qAB → A, B) ---
+  mybuf <- mydata %>% mutate(state_1 = str_sub(parameter, 2, 2))
+  mydf  <- mybuf %>% mutate(state_2 = str_sub(parameter, 3, 3)) %>%
+           select(state_1, state_2, zscore)
+
+  # --- Convert z-score to non-z-score ---
   mydf <- mydf %>% mutate(nonzscore = 100 - zscore) %>% select(-zscore)
-  
-  # === Set threshold ===
-  #-------------------------------
+
+  # --- Threshold filtering ---
   mythreshold_lower <- 30
-  #-------------------------------
-  # Filter edges based on the threshold
   myedge <- mydf %>% filter(nonzscore > mythreshold_lower)
-  
-  if (nrow(mydf) > 0){
-    # === Convert to graph ===
+
+  if (nrow(mydf) > 0) {
+
+    # --- Build weighted graph ---
     g <- graph_from_data_frame(myedge, directed = TRUE)
-    # Assign edge weights
     E(g)$weight <- myedge$nonzscore
-    
-    #モジュール検出：infomap法
-    #------------------------------------------------------
+
+    # --- Infomap clustering ---
     aaa <- cluster_infomap(g, e.weights = E(g)$weight)
-    myfout <- "infomap"
-    #------------------------------------------------------
-    
-    #モジュールの保存
-    mymodule <- tibble(label = names(membership(aaa)), module = membership(aaa)) 
-    
-    #ファイル名
-    fout <- str_replace(cfin, "zscore_ch", "modulePathway")
+
+    # --- Extract modules ---
+    mymodule <- tibble(
+      label  = names(membership(aaa)),
+      module = membership(aaa)
+    )
+
+    # --- Output file name ---
+    fout_name <- basename(cfin) %>%
+                 str_replace("zscore_ch", "modulePathway")
+    fout <- file.path(results_dir, fout_name)
+
+    # --- Save output ---
     write_tsv(mymodule, fout)
   }
 }
