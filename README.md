@@ -130,8 +130,7 @@ Used as a unified reference across phyla.
 ```R
 /src/R/makerestriction.R
 ```
-[`makeinputcommands.R`](https://github.com/takaoksuzuki/pathwayPCM/blob/main/src/R/makeinputcommands.R)
- creates the BayesTraits input command files for Step 3 by integrating the restriction files. Output files are saved as: inputcommands_*.txt in the [`results/`](https://github.com/takaoksuzuki/pathwayPCM/blob/main/results) directory.
+`makeinputcommands.R` creates the BayesTraits input command files for Step 3 by integrating the restriction files. Output files are saved as: inputcommands_*.txt in the [`results/`](https://github.com/takaoksuzuki/pathwayPCM/blob/main/results) directory.
 ```R
 /src/R/makeinputcommands.R
 ```
@@ -151,7 +150,7 @@ Preparing shell files.
 
 **Step 4: Parse the results of BayesTraits**
 
-In batch processing mode, each script (`extractdata.R`, `makeqrate.R`, `makezscore.R`) automatically loads the BayesTraits output files located in the `results/ directory`, which are generated when users run Step 3 (run_bayestraits.sh).
+In batch processing mode, each script (`extractdata.R`, `makeqrate.R`, `makezscore.R`) automatically loads the BayesTraits output files located in the [`results/`](https://github.com/takaoksuzuki/pathwayPCM/blob/main/results) directory, which are generated when users run Step 3 (run_bayestraits.sh).
 
 Parse the BayesTraits output files to extract data rows.
 ```R
