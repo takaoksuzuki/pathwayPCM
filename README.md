@@ -188,7 +188,8 @@ the following files are available:
 
 **Step 5: Draw the macro-evolutionary pathway**
 
-This script constructs an edge list from the q-rate and z-score tables (generated in Step 4) and draws the directed macro-evolutionary pathway network.
+This script reads the q-rate and z-score tables from [`results/`](https://github.com/takaoksuzuki/pathwayPCM/blob/main/results) (or [`output/`](https://github.com/takaoksuzuki/pathwayPCM/blob/main/output) if Step 3 is skipped) and draws the macro-evolutionary pathway network. Output figures are saved in `results/`.
+
 ```R
 /src/R/plot_zscore+qrates.R
 ```
