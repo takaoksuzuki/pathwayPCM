@@ -173,7 +173,7 @@ Calcurate z-scores from the extracted data.
 > analyses without executing Step 3 (`run_bayestraits.sh`).
 
 
-Output
+Output:
 
 If you use the pre-computed example results in the `output/` directory (instead of running Step 3),  
 the following files are available:
