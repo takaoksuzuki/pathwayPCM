@@ -122,7 +122,7 @@ Input table of accession–trait combinations. The first column lists tip labels
 Character coding table. This file defines the correspondence between each alphanumeric code and the actual combination of trait states (e.g., A = rod–motile–sporulating).
 Used as a unified reference across phyla.
 
-**Step 2: Preparation of a command file for BayesTraits analysis**
+**Step 2: Prepare BayesTraits command files (w/ rate restrictions)**
 
 Make command lines for constraining transition rates.
 
