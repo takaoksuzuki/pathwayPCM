@@ -124,8 +124,7 @@ Used as a unified reference across phyla.
 
 **Step 2: Prepare BayesTraits command files (w/ rate restrictions)**
 
-[`makerestriction.R`](https://github.com/takaoksuzuki/pathwayPCM/blob/main/src/R/makerestriction.R)
- generates intermediate restriction files (mycommand_*.txt) for the following step. These files are saved in the [`results/`](https://github.com/takaoksuzuki/pathwayPCM/blob/main/results) directory.
+`makerestriction.R` generates intermediate restriction files (mycommand_*.txt) for the following step. These files are saved in the [`results/`](https://github.com/takaoksuzuki/pathwayPCM/blob/main/results) directory.
 
 ```R
 /src/R/makerestriction.R
