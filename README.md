@@ -131,7 +131,7 @@ Used as a unified reference across phyla.
 /src/R/makerestriction.R
 ```
 [`makeinputcommands.R`](https://github.com/takaoksuzuki/pathwayPCM/blob/main/src/R/makeinputcommands.R)
- creates the BayesTraits input command files for Step 3 by integrating the restriction files. Output files are saved in results/ with names such as: inputcommands_<phylum>.txt
+ creates the BayesTraits input command files for Step 3 by integrating the restriction files. Output files are saved as: inputcommands_*.txt in results/
 ```R
 /src/R/makeinputcommands.R
 ```
