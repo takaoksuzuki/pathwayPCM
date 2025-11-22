@@ -6,6 +6,10 @@ library(tidyr)
 # === Set data directory ===
 data_dir <- file.path("data")
 
+# === Ensure output directory ===
+out_dir <- "results"
+dir.create(out_dir, showWarnings = FALSE)
+
 # === Load coding table ===
 fin_full <- file.path(data_dir, "ch_coding_GTDB207_cellshape_motility_sporulation_ALLphylum.tsv")
 mydata <- readr::read_tsv(fin_full)
@@ -36,7 +40,11 @@ for (cfin in fin){
   mych <- mydf_taxa %>% distinct(ch) %>% arrange(ch) %>% pull(ch)
   
   # output file name
-  fout <- fin_full %>% str_replace("ch", "mycommand") %>% str_replace("ALLphylum", mytaxa)
+  fin_base <- basename(cfin)
+  mystart <- regexpr(mykey, fin_base) + nchar(mykey)
+  myend   <- regexpr(".tsv", fin_base) - 1
+  mytaxa  <- str_sub(fin_base, mystart, myend)
+  fout <- file.path(out_dir, paste0("mycommand_", mytaxa, ".txt"))
   
   # === Process only if two or more trait states exist ===
   if (length(mych) >= 2){
@@ -164,6 +172,7 @@ for (cfin in fin){
     }
   }
 }
+
 
 
 
