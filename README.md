@@ -44,6 +44,8 @@ pathwayPCM consists of three computational stages:
 
 ## Installation Guide
 
+**Typical install time on a "normal" desktop computer:** ~5 minutes.
+
 #### 1. Prerequisites
 pathwayPCM is currently implemented as a modular pipeline, not a single integrated R package.
 
