@@ -130,6 +130,10 @@ Make command lines for constraining transition rates.
 /src/R/makerestriction.R
 ```
 
+```R
+/src/R/makeinputcommands.R
+```
+
 **Step 3: Run BayesTraits**
 
 Preparing shell files.
