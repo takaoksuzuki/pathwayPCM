@@ -3,9 +3,12 @@ library(dplyr)
 library(stringr)
 library(tidyr)
 
-# === Load the coding table ===
-fin_full <- "ch_coding_GTDB207_cellshape_motility_sporulation_ALLphylum.tsv"
-mydata <- read_tsv(fin_full)
+# === Set data directory ===
+data_dir <- file.path("data")
+
+# === Load coding table ===
+fin_full <- file.path(data_dir, "ch_coding_GTDB207_cellshape_motility_sporulation_ALLphylum.tsv")
+mydata <- readr::read_tsv(fin_full)
 
 # === Get file names: trait coding tables by phylum ===
 mykey <- "^ch_GTDB207_cellshape_motility_sporulation_"
@@ -161,4 +164,5 @@ for (cfin in fin){
     }
   }
 }
+
 
