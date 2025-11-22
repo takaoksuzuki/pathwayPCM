@@ -108,6 +108,9 @@ BayesTraits is used in Sample Codes Step 3 (“Run BayesTraits”) of the pipeli
 
 ## Sample Codes
 
+**Expected run time for demo on a "normal" desktop computer:** ~10–20 seconds.
+Full BayesTraits analysis requires an HPC system (~7 days, 1 CPU).
+
 This repository contains an example input file in the `data` directory so users can quickly try reconstructing macro-evolutionary pathway of multiple traits using pathwayPCM step-by-step:
 
 **Step 1: Dataset Preparation**
