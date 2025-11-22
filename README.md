@@ -188,8 +188,7 @@ the following files are available:
 
 **Step 5: Draw the macro-evolutionary pathway**
 
-Make edge list of macro-evolutioary pathway and draw it.
-
+This script constructs an edge list from the q-rate and z-score tables (generated in Step 4) and draws the directed macro-evolutionary pathway network.
 ```R
 /src/R/plot_zscore+qrates.R
 ```
