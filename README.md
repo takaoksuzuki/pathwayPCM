@@ -75,7 +75,7 @@ install.packages(c(
   "igraph"
 ))
 ```
-These packages are used in Step 1 (preprocessing) and Step 3 (downstream analysis).
+These packages are used in the preprocessing and downstream analysis steps (Sample Codes Steps 1, 4–6).
 
 ##### Step 3 — Prepare shell environment (bash)
 Some steps in the pathwayPCM workflow (especially running BayesTraits) require a working bash environment.
@@ -102,7 +102,7 @@ Test the installation:
 ```SHELL
 ./BayesTraits/BayesTraitsV4
 ```
-BayesTraits is used in Step 2 (Run BayesTraits) of the pipeline.
+BayesTraits is used in Sample Codes Step 3 (“Run BayesTraits”) of the pipeline.
 
 ## Sample Codes
 
