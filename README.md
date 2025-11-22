@@ -144,7 +144,7 @@ Preparing shell files.
 /src/SHELL/run_bayestraits.sh
 ```
 
-> [!NOTE]
+> [!CAUTINO]
 > Running BayesTraits on the full dataset generates >13 GB of output
 > and requires approximately 7 days of computation on an HPC cluster (1 CPU).
 > We strongly recommend running this step on a high-performance computing system.
