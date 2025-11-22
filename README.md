@@ -144,6 +144,11 @@ Preparing shell files.
 /src/SHELL/run_bayestraits.sh
 ```
 
+> [!NOTE]
+> Running BayesTraits on the full dataset generates >13 GB of output
+> and requires approximately 7 days of computation on an HPC cluster (1 CPU).
+> We strongly recommend running this step on a high-performance computing system.
+
 **Step 4: Parse the results of BayesTraits**
 
 In batch processing mode, users do not need to specify input files explicitly. Each script (`extractdata.R`, `makeqrate.R`, and `makezscore.R`) automatically detects and loads input files located in the same directory as the script (`/src/R/`). <BR>
