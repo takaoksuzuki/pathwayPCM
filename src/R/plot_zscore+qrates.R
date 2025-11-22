@@ -4,78 +4,85 @@ library(dplyr)
 library(tidyr)
 library(igraph)
 
-# === Load file names for z-score results ===
-#-----------------------------------------------------------------------------------------
-fin_z <- list.files(getwd(), pattern ="^zscore_ch_GTDB207_cellshape_motility_sporulation_", full.names = F)
-#-----------------------------------------------------------------------------------------
+# === Directories ===
+results_dir <- file.path("results")   # BayesTraits output
+output_dir  <- file.path("output")    # Pre-computed alternative output
 
-# === qrate result files will be loaded inside the for-loop ===
+# Use results/ as primary search path
+fin_z <- list.files(results_dir,
+                    pattern = "^zscore_ch_GTDB207_cellshape_motility_sporulation_",
+                    full.names = TRUE)
+
+if (length(fin_z) == 0) {
+  # fallback: use pre-computed example output
+  fin_z <- list.files(output_dir,
+                      pattern = "^zscore_ch_GTDB207_cellshape_motility_sporulation_",
+                      full.names = TRUE)
+}
+
+# Warn if still nothing
+if (length(fin_z) == 0) {
+  stop("No zscore_* files found in results/ or output/.")
+}
 
 for (cfin in fin_z) {
-  # Generate the corresponding qrate file name
+
+  # Matching qrate file
   fin_q <- str_replace(cfin, "zscore", "qrate")
 
-  # === Read z-score data ===
-  # Note: do NOT use read_tsv() here, otherwise color codes will not be read correctly!
+  # === Read z-score ===
   mydata_z <- read.delim(cfin)
-  # Rename columns
-  colnames(mydata_z) <- c("parameter","zscore")
+  colnames(mydata_z) <- c("parameter", "zscore")
 
-  # === Read qrate data ===
-  # Note: do NOT use read_tsv() here, otherwise color codes will not be read correctly!
+  # === Read qrate ===
   mydata_q <- read.delim(fin_q)
-  # Rename columns
-  colnames(mydata_q) <- c("parameter","qrates")
-  
-  # === Merge z-score and qrate data ===
-  mydata <- left_join(mydata_z, mydata_q, by="parameter")
-  
-  # === Create edge list ===
-  # Split transition states:
-  # qAB -> A, B
-  mybuf <- mydata %>% mutate(state_1=str_sub(parameter, 2, 2)) 
-  mydf <- mybuf %>% mutate(state_2=str_sub(parameter, 3, 3)) %>% select(state_1, state_2, zscore, qrates)
-  
-  # === Convert z-score to “non-z-score” ===
-  mydf <- mydf %>% mutate(nonzscore = 100 - zscore) %>% select(-zscore)
-  
-  # === Set threshold ===
-  #-------------------------------
+  colnames(mydata_q) <- c("parameter", "qrates")
+
+  # === Merge ===
+  mydata <- left_join(mydata_z, mydata_q, by = "parameter")
+
+  # === Extract states ===
+  mydf <- mydata %>%
+    mutate(state_1 = str_sub(parameter, 2, 2),
+           state_2 = str_sub(parameter, 3, 3)) %>%
+    select(state_1, state_2, zscore, qrates)
+
+  # nonzscore
+  mydf <- mydf %>%
+    mutate(nonzscore = 100 - zscore) %>%
+    select(-zscore)
+
+  # Threshold
   mythreshold_lower <- 30
-  #-------------------------------
-  # Filter edges based on the threshold
   myedge <- mydf %>% filter(nonzscore > mythreshold_lower)
 
-  if (nrow(mydf) > 0){
-    # === Convert to graph ===
+  if (nrow(myedge) > 0) {
+
     g <- graph_from_data_frame(myedge, directed = TRUE)
-    # Assign edge weights
     E(g)$weight <- myedge$qrates
 
-    # === Plot settings ===
-    #----------------------------------------------------------
-    # Define layout for visualization
-    mylayout=layout_with_graphopt
+    # Layout
+    mylayout <- layout_with_graphopt
 
-    # output file name
-    fout <- str_replace(cfin, "zscore_ch", "plot")
-    fout <- str_replace(fout, "tsv", "png")
-    
-    # Save plot as PNG
-    png(fout, width=3000, height=2000)
-    
-    par(mar = c(0, 0, 0, 0)) #  Set margins: bottom, left, top, right
-    # ---- Plot graph ----
+    # Output filename → results/
+    fout <- basename(cfin)
+    fout <- str_replace(fout, "zscore_ch", "plot")
+    fout <- str_replace(fout, ".tsv", ".png")
+    fout <- file.path(results_dir, fout)
+
+    png(fout, width = 3000, height = 2000)
+    par(mar = c(0, 0, 0, 0))
+
     plot.igraph(g,
                 layout = mylayout,
                 vertex.color = "white",
                 vertex.size = 10,
                 vertex.shape = "circle",
                 vertex.label.cex = 5,
-                vertex.frame.width=5,
-                edge.lty = E(g)$lty,
+                vertex.frame.width = 5,
                 edge.arrow.size = 4,
                 edge.curved = 0.2)
+
     dev.off()
   }
 }
