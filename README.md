@@ -59,7 +59,7 @@ Once installed, users can run the three computational steps (data preprocessing 
 #### 2. Installation instructions
 ##### Step 1 — Clone the repository
 ```SHELL
-git clone https://github.com/takaokosk/pathwayPCM.git
+git clone https://github.com/takaoksuzuki/pathwayPCM.git
 cd pathwayPCM
 ```
 This repository contains the R scripts, shell scripts, and example input files necessary to reproduce the workflow.
