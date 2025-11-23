@@ -4,55 +4,87 @@ library(stringr)
 library(tidyr)
 library(igraph)
 
-# === Set directories ===
-data_dir <- "data"
-results_dir <- "results"
+# === Directories ===
+results_dir <- "results"   # BayesTraits results (priority)
+output_dir  <- "output"    # Pre-computed example results
 
-# === Load z-score result files from results/ ===
-fin_z <- list.files(results_dir, 
-                    pattern = "^zscore_ch_GTDB207_cellshape_motility_sporulation_", 
-                    full.names = TRUE)
+# === Try reading zscore_* from results/ first ===
+fin_z <- list.files(
+  results_dir,
+  pattern = "^zscore_ch_GTDB207_cellshape_motility_sporulation_",
+  full.names = TRUE
+)
 
-# === Loop over each z-score file ===
+# === Fallback to output/ if results/ has no zscore files ===
+if (length(fin_z) == 0) {
+  fin_z <- list.files(
+    output_dir,
+    pattern = "^zscore_ch_GTDB207_cellshape_motility_sporulation_",
+    full.names = TRUE
+  )
+  input_dir <- output_dir
+} else {
+  input_dir <- results_dir
+}
+
+# === If still no files → stop ===
+if (length(fin_z) == 0) {
+  stop("No zscore_* files found in 'results/' or 'output/'")
+}
+
+message("Using zscore files from: ", input_dir)
+
+# =======================================================================
+# Loop over each zscore file
+# =======================================================================
 for (cfin in fin_z) {
 
-  # --- Read z-score data ---
+  # Corresponding qrate file is in the same directory
+  fin_q <- str_replace(cfin, "zscore", "qrate")
+
+  # Check that matching qrate exists
+  if (!file.exists(fin_q)) {
+    stop(paste("Matching qrate file not found for:", cfin))
+  }
+
+  # --- Read zscore ---
   mydata <- read.delim(cfin)
   colnames(mydata) <- c("parameter","zscore")
 
-  # --- Create edge list (qAB → A, B) ---
-  mybuf <- mydata %>% mutate(state_1 = str_sub(parameter, 2, 2))
-  mydf  <- mybuf %>% mutate(state_2 = str_sub(parameter, 3, 3)) %>%
-           select(state_1, state_2, zscore)
+  # === Extract states & convert to nonzscore ===
+  mydf <- mydata %>%
+    mutate(
+      state_1 = str_sub(parameter, 2, 2),
+      state_2 = str_sub(parameter, 3, 3),
+      nonzscore = 100 - zscore
+    ) %>%
+    select(state_1, state_2, nonzscore)
 
-  # --- Convert z-score to non-z-score ---
-  mydf <- mydf %>% mutate(nonzscore = 100 - zscore) %>% select(-zscore)
-
-  # --- Threshold filtering ---
+  # === Threshold filtering ===
   mythreshold_lower <- 30
   myedge <- mydf %>% filter(nonzscore > mythreshold_lower)
 
-  if (nrow(mydf) > 0) {
+  if (nrow(myedge) == 0) next
 
-    # --- Build weighted graph ---
-    g <- graph_from_data_frame(myedge, directed = TRUE)
-    E(g)$weight <- myedge$nonzscore
+  # --- Build weighted graph ---
+  g <- graph_from_data_frame(myedge, directed = TRUE)
+  E(g)$weight <- myedge$nonzscore
 
-    # --- Infomap clustering ---
-    aaa <- cluster_infomap(g, e.weights = E(g)$weight)
+  # --- Infomap clustering ---
+  aaa <- cluster_infomap(g, e.weights = E(g)$weight)
 
-    # --- Extract modules ---
-    mymodule <- tibble(
-      label  = names(membership(aaa)),
-      module = membership(aaa)
-    )
+  # --- Save results ---
+  mymodule <- tibble(
+    label  = names(membership(aaa)),
+    module = membership(aaa)
+  )
 
-    # --- Output file name ---
-    fout_name <- basename(cfin) %>%
-                 str_replace("zscore_ch", "modulePathway")
-    fout <- file.path(results_dir, fout_name)
+  fout_name <- basename(cfin) %>%
+    str_replace("zscore_ch", "modulePathway")
 
-    # --- Save output ---
-    write_tsv(mymodule, fout)
-  }
+  fout <- file.path(results_dir, fout_name)
+
+  write_tsv(mymodule, fout)
+
+  message("Saved module file: ", fout)
 }
