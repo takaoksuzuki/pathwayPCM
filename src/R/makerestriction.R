@@ -32,19 +32,13 @@ for (cfin in fin){
   mystart <- regexpr(mykey, cfin) + nchar(mykey)
   myend <- regexpr(".tsv", cfin) - 1
   mytaxa <- str_sub(cfin, mystart, myend)
+  fout <- file.path(out_dir, paste0("mycommand_", mytaxa, ".txt"))
   
   # === Read the trait coding table ===
   mydf_taxa <- read.table(cfin, header=F)
   colnames(mydf_taxa) <- c("accession", "ch")
   # Extract trait states
   mych <- mydf_taxa %>% distinct(ch) %>% arrange(ch) %>% pull(ch)
-  
-  # output file name
-  fin_base <- basename(cfin)
-  mystart <- regexpr(mykey, fin_base) + nchar(mykey)
-  myend   <- regexpr(".tsv", fin_base) - 1
-  mytaxa  <- str_sub(fin_base, mystart, myend)
-  fout <- file.path(out_dir, paste0("mycommand_", mytaxa, ".txt"))
   
   # === Process only if two or more trait states exist ===
   if (length(mych) >= 2){
@@ -172,6 +166,7 @@ for (cfin in fin){
     }
   }
 }
+
 
 
 
