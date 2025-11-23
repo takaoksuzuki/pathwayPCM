@@ -30,9 +30,10 @@ mydata <- bind_cols(mydata, mybuf)
 for (cfin in fin){
   # Extract phylum name from file name
   fin_base <- basename(cfin)
-  mystart <- regexpr(mykey, fin_base) + nchar(mykey) - 1
-  myend <- regexpr(".tsv", cfin) - 1
-  mytaxa <- str_sub(cfin, mystart, myend)
+  m <- regexpr(mykey, fin_base)
+  mystart <- m + attr(m, "match.length")
+  myend   <- regexpr(".tsv$", fin_base) - 1
+  mytaxa <- str_sub(fin_base, mystart, myend)
   fout <- file.path(out_dir, paste0("mycommand_", mytaxa, ".txt"))
   
   # === Read the trait coding table ===
@@ -167,6 +168,7 @@ for (cfin in fin){
     }
   }
 }
+
 
 
 
