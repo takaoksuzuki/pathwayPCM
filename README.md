@@ -131,11 +131,11 @@ Used as a unified reference across phyla.
 `makerestriction.R` generates intermediate restriction files (mycommand_*.txt) for the following step. These files are saved in the [`results/`](https://github.com/takaoksuzuki/pathwayPCM/blob/main/results) directory.
 
 ```R
-./src/R/makerestriction.R
+source("./src/R/makerestriction.R")
 ```
 `makeinputcommands.R` creates the BayesTraits input command files for Step 3 by integrating the restriction files. Output files are saved as: inputcommands_*.txt in the [`results/`](https://github.com/takaoksuzuki/pathwayPCM/blob/main/results) directory.
 ```R
-./src/R/makeinputcommands.R
+source("./src/R/makeinputcommands.R")
 ```
 
 **Step 3: Run BayesTraits**
@@ -157,17 +157,17 @@ In batch processing mode, each script (`extractdata.R`, `makeqrate.R`, `makezsco
 
 Parse the BayesTraits output files to extract data rows.
 ```R
-./src/R/extractdata.R
+source("./src/R/extractdata.R")
 ```
 Calcurate qrates from the extracted data.
 
 ```R
-./src/R/makeqrate.R
+source("./src/R/makeqrate.R")
 ```
 Calcurate z-scores from the extracted data.
 
 ```R
-./src/R/makezscore.R
+source("./src/R/makezscore.R")
 ```
 
 > [!Note]
@@ -195,7 +195,7 @@ the following files are available:
 This script reads the q-rate and z-score tables from [`results/`](https://github.com/takaoksuzuki/pathwayPCM/blob/main/results) (or [`output/`](https://github.com/takaoksuzuki/pathwayPCM/blob/main/output) if Step 3 is skipped) and draws the macro-evolutionary pathway network. Output figures are saved in `results/`.
 
 ```R
-./src/R/plot_zscore+qrates.R
+source("./src/R/plot_zscore+qrates.R")
 ```
 
 Output:
@@ -207,7 +207,7 @@ Output:
 Identify flow modules (clusters of trait transitions) within the macro-evolutionary pathway network using the Infomap algorithm.
 
 ```R
-./src/R/calc_module_infomap.R
+source("./src/R/calc_module_infomap.R")
 ```
 
 Output
