@@ -29,7 +29,7 @@ mydata <- bind_cols(mydata, mybuf)
 # Each phylum may have different sets of trait states, resulting in distinct qAB (e.g., qZX) transitions.
 for (cfin in fin){
   # Extract phylum name from file name
-  mystart <- regexpr(mykey, cfin) + nchar(mykey) - 1
+  mystart <- regexpr(mykey, cfin) + nchar(mykey)
   myend <- regexpr(".tsv", cfin) - 1
   mytaxa <- str_sub(cfin, mystart, myend)
   
@@ -172,6 +172,7 @@ for (cfin in fin){
     }
   }
 }
+
 
 
 
