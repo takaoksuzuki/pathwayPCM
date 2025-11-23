@@ -84,7 +84,6 @@ Some steps in the pathwayPCM workflow (especially running BayesTraits) require a
 
 To check that bash is available:
 ```SHELL
-# example
 bash --version
 ```
 Linux and macOS provide a bash shell by default. Windows users should run the pipeline through WSL2 for full compatibility.
